@@ -1,0 +1,3 @@
+C:/Users/Badir/CLionProjects/WildCard/cmake-build-debug/CMakeFiles/WildCard.dir
+C:/Users/Badir/CLionProjects/WildCard/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Badir/CLionProjects/WildCard/cmake-build-debug/CMakeFiles/rebuild_cache.dir

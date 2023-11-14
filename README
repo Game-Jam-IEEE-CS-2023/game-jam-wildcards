@@ -1,0 +1,42 @@
+# WildCards - The lock of the wizard
+
+- Game developed by Badi Masud Rodriguez Ramirez (PBStriker101)
+- Date of beginning of development: 11/14/2023 (October 14, 2023)
+
+[ = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ]
+
+"Wa-ha-ha-haha!! It is with this very hands that I, Vermius the Wizard, have seized the realm of truth
+and have ascended beyond this uni-dimensional clutter of circuits and microprocessors!!! Do you want to stop me?!
+Come and beat me in the domain in which I was born, the heart of the cards!!!"
+
+                                                        - Vermius, the Great Wizard
+
+[ = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ]
+
+Welcome to WildCards! A thrilling and exciting game in which you will play with a bunch of cool
+(but sadly without visual art) cards and defeat Vermius, the wizard that was born due to me not knowing
+how to use pointers and handle memory leaks when using classes in C++! H-Hahah... Well, that aside! Go, you
+must stop Vermius before he destroys my computer, do you think you are up to the task? I trust in you, good luck!
+
+Here are the rules for the game:
+
+### Rules
+
+- First, you will have a hand of 5 cards dealt at the beginning of the first round. As the game goes by, you will draw a card
+at the beginning of each turn!
+- To win and defeat Vermius so you can free my computer? Reduce his Prime Points to 0! (PP for abbreviation, it's the HP unit of the game!)
+- But be careful tho! If you have YOUR Prime Points (or PP) reduced to 0, we lose and my computer is a goner!
+- You both start with 20! Be sure to quickly seize victory.
+- To deal damage to Vermius, first you have to place a card and pay its energy cost (which will appear listed at the top of each card right below its name.)
+Then, you can command it to attack once you finish placing cards. Be aware that declaring your attack will end the turn!
+- Be careful tho! Watch out for the ATK and DEF stat of each card on the field, they will determine the outcome of each battle!
+- If your card's attack stat (ATK) is lower than the defense (DEF) of Vermius's defending card. Then he will easily deflect the offensive!
+- Moreover, if the defending card's attack is higher than your attacking card's defense, then your card will be eliminated! Watch out and play smart!
+- If two cards are tied for the condition of each one being destroyed, then both are destroyed.
+- You start with 8 energy, and it will refresh by the beginning of your turn, so don't worry! Just get to dueling!
+- Here is a tip: Despite Vermius being quite intimidating, his cards have very low Defense. So be on the lookout for that! ^w^
+- Cards also have types! But do not worry, they do not affect gameplay (yet...)
+
+Thank you, now you are ready and set to play. Begin the main.cpp file in this folder. Into the fray soldier!!!
+
+(Dynamic Projects (TM)) - 2023

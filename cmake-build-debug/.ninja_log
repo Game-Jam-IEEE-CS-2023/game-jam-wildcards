@@ -1,0 +1,5 @@
+# ninja log v5
+14	527	7217023840238107	CMakeFiles/WildCard.dir/Card.cpp.obj	1cd0e2f03330bf6d
+3	675	7217023841719725	CMakeFiles/WildCard.dir/main.cpp.obj	67227c27f06c4380
+675	795	7217023842850426	WildCard.exe	223fcf90a1061c84
+24	548	7217023840437756	CMakeFiles/WildCard.dir/CardDeck.cpp.obj	3ba08eb59329e7a6
