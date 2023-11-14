@@ -8,6 +8,8 @@
 #include <string>
 #include "Card.h"
 
+using namespace std;
+
 // Define class methods of Card - (Main runs).
 Card::Card(string _cardName, int _cardCost, string _cardDesc, string _cardType) {
     cardName = _cardName;
