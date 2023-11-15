@@ -31,8 +31,6 @@ void Player::drawCard() {
         cout << "There are no more cards in the deck! This is your last stand!\n";
         return;
     }
-
-    cout << "Deck size after drawing: " << deck.size() << "\n";
 }
 
 std::string Player::getName() const {

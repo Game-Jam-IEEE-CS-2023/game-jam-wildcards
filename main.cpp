@@ -33,15 +33,14 @@ int main() {
     // Prepare for game run
     cout << "Holding . . ." << endl;
     system("pause");
-    system("cls");
 
     cout << "Hahaha, it seems that you have presented at last to help the poor man that trapped me in here!" << endl;
-    system("pause");
+
     cout << "Know that you do not have even the slightest of chances at defeating me!!!" << endl;
+
+    cout << ". . . Oh? You heard of my challenge and came to face me?! Hahah! Fool, I will make of this digital plane...\n Your new grave!!!" << endl;
     system("pause");
-    cout << ". . . Oh? You heard of my challenge and came to face me?! Hahah! Fool, I will make of this digital plane... Your new grave!!!" << endl;
-    system("pause");
-    cout << "En garde, man of flesh!!!";
+    cout << "En garde, man of flesh!!!" << endl;
 
     // Generate the first hand of 5 cards for the player
     for (int i = 0; i < 5; ++i) {
@@ -57,7 +56,11 @@ int main() {
     Board gameBoard(player1);
     Board enemyBoard(player2);
 
-    gameBoard.displayBoard();
+    cout << "Vermiu's board: ";
+    enemy_board.displayBoard();
+    cout << player1.getName() << "'s board: ";
+    player_board.displayBoard();
+    system("pause");  // Pause to give the user time to read the board information
 
     // Simulate a turn
     bool endTurn = false;
