@@ -21,7 +21,7 @@ Card::Card(string _cardName, int _cardCost, string _cardDesc, string _cardType, 
     cardDef = _cardDef;
 }
 
-string Card::getCardName() {
+string Card::getCardName() const {
     return cardName;
 }
 

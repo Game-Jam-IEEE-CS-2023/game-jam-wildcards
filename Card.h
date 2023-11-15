@@ -22,7 +22,7 @@ private:
 
 public:
     Card(std::string, int, std::string, std::string, int, int);
-    std::string getCardName();
+    std::string getCardName() const;
     int getCardCost();
     std::string getCardDesc();
     std::string getCardType();
