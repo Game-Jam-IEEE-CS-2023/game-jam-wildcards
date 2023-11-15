@@ -6,10 +6,12 @@
 
 using namespace std;
 
+const int maxEnergyCount = 8;
+
 Player::Player(const std::string& playerName) {
     // Initialize player attributes in the constructor
     name = playerName;
-    energyCount = 8; // Starting energy count (by rule, it is 8)
+    energyCount = maxEnergyCount; // Starting energy count (by rule, it is 8)
     health = 20; // Starting health (by rule, it is 20)
 }
 
@@ -61,5 +63,15 @@ Card Player::chooseCardFromHand() {
         // Return a default-constructed card to handle the error
         return Card("", 0, "", "", 0, 0);
     }
+}
+
+void Player::replenishEnergy() {
+    // Replenish energy for the next turn
+    energyCount = maxEnergyCount;
+}
+
+void Player::takeDamage(int damage) {
+    health = health - damage;
+    return;
 }
 

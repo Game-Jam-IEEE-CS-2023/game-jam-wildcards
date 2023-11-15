@@ -35,6 +35,24 @@ int main() {
     system("pause");
     system("cls");
 
+    cout << "Hahaha, it seems that you have presented at last to help the poor man that trapped me in here!" << endl;
+    system("pause");
+    cout << "Know that you do not have even the slightest of chances at defeating me!!!" << endl;
+    system("pause");
+    cout << ". . . Oh? You heard of my challenge and came to face me?! Hahah! Fool, I will make of this digital plane... Your new grave!!!" << endl;
+    system("pause");
+    cout << "En garde, man of flesh!!!";
+
+    // Generate the first hand of 5 cards for the player
+    for (int i = 0; i < 5; ++i) {
+        player1.drawCard();
+    }
+
+// Generate the first hand of 5 cards for Vermius (NPC)
+    for (int i = 0; i < 5; ++i) {
+        player2.drawCard();
+    }
+
     // Create the game board
     Board gameBoard(player1);
     Board enemyBoard(player2);
@@ -88,8 +106,7 @@ int main() {
                     // If the enemy board is empty, attack the enemy directly
                     if (enemy_board.isEmpty()) {
                         Card& playerCard = player_board.getCardAtPosition(playerPosition);
-                        int attackValue = playerCard.getCardAtk();
-                        player2.takeDamage(attackValue);
+                        player2.takeDamage(playerCard.getCardAtk());
                     } else {
                         // Choose the defending card from Vermius's board
                         cout << "Select Vermius's defending card (0, 1, or 2): ";
@@ -124,6 +141,10 @@ int main() {
                 break;
             case 5:
                 // End the turn
+                // Here, you might want to add logic to replenish the player's energy count for the next turn.
+                player1.replenishEnergy();
+                player2.replenishEnergy();
+                // If NPC has energy, implement the replenishEnergy function in the Player class.
                 endTurn = true;  // Set endTurn to true to exit the loop
                 break;
             default:

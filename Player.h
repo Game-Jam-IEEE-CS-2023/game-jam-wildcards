@@ -28,6 +28,9 @@ public:
     int getEnergyCount() const;
     int getHealth() const;
 
+    // Function to replenish energy for the next turn
+    void replenishEnergy();
+
     void addCardToDeck(const Card& card) {
         deck.push_back(card);
     };
