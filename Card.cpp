@@ -42,23 +42,23 @@ void Card::displayCard() {
     string orbSymbol = "0";
 
     // Display horizontal line
-    cout << setfill('-') << setw(cardWidth) << "\n" << setfill(' ');
+    cout << setfill('-') << setw(cardWidth) << "\n" << setfill(' ') << endl;
 
     // Display card name
-    cout << "[" << setw(cardWidth - 2) << left << cardName << "]" << endl;
+    cout << "[ " << left << setw(cardWidth - 4) << cardName << "]\n";
 
     // Display cost
-    cout << "Cost: " << setw(cardWidth - 7) << right;
+    cout << "Cost: [ ";
     for (int i = 0; i < getCardCost(); ++i) {
         cout << orbSymbol;
     }
-    cout << "|\n";
+    cout << " ]";
 
     // Display type
-    cout << "Type: [" << setw(cardWidth - 9) << left << cardType << "]\n";
+    cout << "Type: [ " << left << setw(cardWidth - 30) << cardType << "]\n";
 
     // Display description
-    cout << "Desc: " << setw(cardWidth - 6) << left << cardDesc << "\n";
+    cout << "Desc: " << setw(cardWidth) << left << cardDesc << "\n";
 
     // Display horizontal line
     cout << setfill('-') << setw(cardWidth) << "\n" << setfill(' ');

@@ -1,5 +1,13 @@
 # ninja log v5
-14	527	7217023840238107	CMakeFiles/WildCard.dir/Card.cpp.obj	1cd0e2f03330bf6d
-3	675	7217023841719725	CMakeFiles/WildCard.dir/main.cpp.obj	67227c27f06c4380
-675	795	7217023842850426	WildCard.exe	223fcf90a1061c84
+6	1014	7217852060211648	CMakeFiles/WildCard.dir/Card.cpp.obj	1cd0e2f03330bf6d
+9	2036	7217864227982716	CMakeFiles/WildCard.dir/main.cpp.obj	67227c27f06c4380
+2037	2418	7217864231699861	WildCard.exe	582d2a0ab99222be
 24	548	7217023840437756	CMakeFiles/WildCard.dir/CardDeck.cpp.obj	3ba08eb59329e7a6
+8	671	7217864125981309	CMakeFiles/WildCard.dir/Player.cpp.obj	a5bce924dbe5ee65
+14	995	7217864129246332	CMakeFiles/WildCard.dir/helpers.cpp.obj	52ba19a290bf17d6
+2	410	7217865902255699	build.ninja	e2981e12b0f0f309
+1	180	7217865902255699	build.ninja	e2981e12b0f0f309
+3	728	7217865909821490	CMakeFiles/WildCard.dir/main.cpp.obj	67227c27f06c4380
+729	864	7217865911132850	WildCard.exe	582d2a0ab99222be
+4	828	7217867125559052	CMakeFiles/WildCard.dir/main.cpp.obj	67227c27f06c4380
+828	964	7217867126854769	WildCard.exe	582d2a0ab99222be

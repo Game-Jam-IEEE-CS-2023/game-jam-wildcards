@@ -9,4 +9,6 @@ add_executable(WildCard main.cpp
         CardDeck.h
         Player.cpp
         Player.h
-        helpers.cpp)
+        helpers.cpp
+        helpers.h
+        decks/player_deck.txt)

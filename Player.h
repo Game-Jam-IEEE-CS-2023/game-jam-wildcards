@@ -20,12 +20,26 @@ private:
     std::vector<Card> hand;
     std::vector<Card> board;
 public:
+    // Constructor
     Player(const std::string& name);
 
-    // Getters
+    // Getters and Setters
     std::string getName() const;
     int getEnergyCount() const;
     int getHealth() const;
+
+    void addCardToDeck(const Card& card) {
+        deck.push_back(card);
+    };
+
+    //Additional methods
+    void displayDeck() const {
+        for (Card card : deck) {
+            card.displayCard();
+            std::cout << "\n";
+            std::cout << "\n---------------------------------\n";
+        }
+    }
 
     // Player actions
     void drawCard();
