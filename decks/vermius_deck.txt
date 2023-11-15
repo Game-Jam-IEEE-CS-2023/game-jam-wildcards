@@ -1,0 +1,10 @@
+Falbour, 3, A digital imp constituted of burning data!, Fire, 2, 1
+Falbour, 3, A digital imp constituted of burning data!, Fire, 2, 1
+Falbour, 3, A digital imp constituted of burning data!, Fire, 2, 1
+BadByte, 2, Tiny scrap bug that hates light!, Bug, 1, 0
+Cashnur, 6, An annoying crypto-bug obsessed with money!, Bug, 3, 1
+BadByte, 2, Tiny scrap bug that hates light!, Bug, 1, 0
+Cashnur, 6, An annoying crypto-bug obsessed with money!, Bug, 3, 1
+Netsu, 2, A literal block of pixels! Good for nothing, Block, 0, 0
+DracoBit, 8, Vermius's signature card! Fierce and mighty!, Drake, 6, 3
+OgreByte, 4, A hungry piece of data as green as a lemon!, Bug, 1, 0

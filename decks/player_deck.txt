@@ -1,0 +1,10 @@
+Proto-Squire, 3, A digital tin-knight small but sturdy, Block, 0, 4
+FlossBush, 2, A flowering spawn of nature bites!, Sentry, 2, 1
+Proto-Squire, 3, A digital tin-knight small but sturdy, Block, 0, 4
+FlossBush, 2, A flowering spawn of nature bites!, Sentry, 2, 1
+Medi, 6, Our beloved virus-buster who possess immense power!, Buster, 6, 2
+FlossBush, 2, A flowering spawn of nature bites!, Sentry, 2, 1
+AdBlocker, 4, The anti-advertiser of all of time!, Buster, 4, 4
+Proto-Squire, 3, A digital tin-knight small but sturdy, Block, 0, 4
+FlossBush, 2, A flowering spawn of nature bites!, Sentry, 2, 1
+Proto-Squire, 3, A digital tin-knight small but sturdy, Block, 0, 4
