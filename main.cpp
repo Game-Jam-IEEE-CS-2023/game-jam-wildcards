@@ -25,18 +25,9 @@ int main() {
     cout << "Vermius's Deck:" << endl;
     player2.displayDeck();
 
-    cout << "Holding . . .";
+    cout << "Holding . . ." << endl;
     system("pause");
-    system("close");
+    system("cls");
 
-
-//    cout << "Player 1's Initial Deck Size: " << player1.getDeckSize() << "\n";
-//    cout << "Vermius's Initial Deck Size: " << player2.getDeckSize() << "\n";
-    // Draw initial hand
-    player1.drawCard();
-    player1.drawCard();
-    player1.drawCard();
-    player1.drawCard();
-    player1.drawCard();
     return 0;
 }
