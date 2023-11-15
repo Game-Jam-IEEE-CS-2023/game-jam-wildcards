@@ -46,6 +46,7 @@ public:
     void playCard(Card& card);
     void takeDamage(int damage);
     void defend(const Card& attackingCard, const Card& defendingCard);
+    Card chooseCardFromHand();
 
     // Additional methods as needed
 };

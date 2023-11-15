@@ -33,3 +33,33 @@ void Player::drawCard() {
     cout << "Deck size after drawing: " << deck.size() << "\n";
 }
 
+std::string Player::getName() const {
+    return name;
+}
+
+Card Player::chooseCardFromHand() {
+    // Display the player's hand
+    std::cout << "Your hand:\n";
+    for (int i = 0; i < hand.size(); ++i) {
+        std::cout << i + 1 << ". " << hand[i].getCardName() << "\n";
+    }
+
+    // Get the player's choice
+    int choice;
+    std::cout << "Enter the number of the card you want to play: ";
+    std::cin >> choice;
+
+    // Check if the choice is valid
+    if (choice >= 1 && choice <= hand.size()) {
+        // Get the chosen card
+        Card chosenCard = hand[choice - 1];
+        // Remove the chosen card from the hand
+        hand.erase(hand.begin() + choice - 1);
+        return chosenCard;
+    } else {
+        std::cerr << "Invalid choice. Please choose a valid card.\n";
+        // Return a default-constructed card to handle the error
+        return Card("", 0, "", "", 0, 0);
+    }
+}
+

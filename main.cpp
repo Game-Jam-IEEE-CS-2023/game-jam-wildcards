@@ -8,6 +8,16 @@ namespace fs = std::filesystem;
 
 using namespace std;
 
+void displayMenu() {
+    std::cout << "Your turn! What will you do?" << std::endl;
+    std::cout << "1.- Place cards\n"
+              << "2.- Check the board\n"
+              << "3.- Listen to Vermius\n"
+              << "4.- Attack\n"
+              << "5.- End turn\n";
+}
+
+
 int main() {
     std::cout << "Current Working Directory: " << fs::current_path() << std::endl;
     // Create players
@@ -35,13 +45,7 @@ int main() {
     bool endTurn = false;
     while (!endTurn) {
         // Display the menu
-        std::cout << "Your turn! What will you do?" << std::endl;
-        std::cout << "1.- Place cards\n"
-                  << "2.- Check the board\n"
-                  << "3.- Listen to Vermius\n"
-                  << "4.- Attack\n"
-                  << "5.- End turn\n";
-
+        displayMenu();
         int choice;
         std::cout << "Enter your choice: ";
         std::cin >> choice;
@@ -49,15 +53,13 @@ int main() {
         switch (choice) {
             case 1: {
                 // Simulate placing cards on the board
-                cout << "Choose a card of your hand to place down!\n";
-
-                // TODO: Add logic to get the card chosen by the player from their hand
-                // and place it on the board, also removing it from their hand.
-
-                // Add cards to the board
-                player_board.addCardToBoard(card1);
-                player_board.displayBoard();
-
+                std::cout << "Choose a card from your hand to place on the board!\n";
+                Card chosenCard = player1.chooseCardFromHand();
+                if (!chosenCard.getCardName().empty()) {
+                    // Add cards to the board
+                    player_board.addCardToBoard(chosenCard);
+                    player_board.displayBoard();
+                }
                 break;
             }
             case 2:
@@ -73,9 +75,51 @@ int main() {
                 cout << player2.getName() << ": " << "I do not intend to give you ANY advice\nPrepare to meet my unfiltered wrath!.";
                 break;
             case 4:
-                // TODO: Add logic for attacking
+                // Add logic for attacking
                 // Example:
                 // player1.attack(player_board, enemy_board);
+                if (!player_board.isFull()) {
+                    int playerPosition, enemyPosition;
+
+                    // Choose the attacking card from the player's board
+                    cout << "Select your attacking card (0, 1, or 2): ";
+                    cin >> playerPosition;
+
+                    // If the enemy board is empty, attack the enemy directly
+                    if (enemy_board.isEmpty()) {
+                        Card& playerCard = player_board.getCardAtPosition(playerPosition);
+                        int attackValue = playerCard.getCardAtk();
+                        player2.takeDamage(attackValue);
+                    } else {
+                        // Choose the defending card from Vermius's board
+                        cout << "Select Vermius's defending card (0, 1, or 2): ";
+                        cin >> enemyPosition;
+
+                        // Validate the positions
+                        if (playerPosition >= 0 && playerPosition < 3 && enemyPosition >= 0 && enemyPosition < 3) {
+                            Card& playerCard = player_board.getCardAtPosition(playerPosition);
+                            Card& enemyCard = enemy_board.getCardAtPosition(enemyPosition);
+
+                            // Compare ATK and DEF stats
+                            if (playerCard.getCardAtk() < enemyCard.getCardDef()) {
+                                cout << "Vermius's defending card deflects your attack!\n";
+                            } else if (playerCard.getCardDef() < enemyCard.getCardAtk()) {
+                                cout << "Your attacking card is eliminated!\n";
+                                player_board.removeCardAtPosition(playerPosition);
+                            } else {
+                                // Cards are tied, both are destroyed
+                                cout << "Both cards are destroyed in battle!\n";
+                                player_board.removeCardAtPosition(playerPosition);
+                                enemy_board.removeCardAtPosition(enemyPosition);
+                            }
+                        } else {
+                            cout << "Invalid card positions. Please choose valid positions.\n";
+                        }
+                    }
+                } else {
+                    cout << "Your board is not ready for an attack. Make sure you have cards on the board.\n";
+                }
+
                 endTurn = true;  // Set endTurn to true to exit the loop
                 break;
             case 5:

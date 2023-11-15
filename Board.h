@@ -18,11 +18,20 @@ public:
     // Function to check if the board is full
     bool isFull() const;
 
+    // Function to check if the board is empty
+    bool isEmpty() const;
+
     // Function to add a card to the board
     void addCardToBoard(const Card& card);
 
     // Function to display the current state of the board
     void displayBoard() const;
+
+    // Function to get a reference to the card at a specific position on the board
+    Card& getCardAtPosition(int position);
+
+    // Function to remove the card at a specific position on the board
+    void removeCardAtPosition(int position);
 };
 
 #endif //WILDCARD_BOARD_H

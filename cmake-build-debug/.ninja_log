@@ -29,3 +29,9 @@
 1436	1602	7217911851244651	WildCard.exe	8781d276baf216c0
 4	879	7217912385210006	CMakeFiles/WildCard.dir/main.cpp.obj	67227c27f06c4380
 880	1071	7217912387076374	WildCard.exe	8781d276baf216c0
+21	1079	7217924180289755	CMakeFiles/WildCard.dir/Board.cpp.obj	4b3f52e0a08afe26
+4	1474	7217924184259180	CMakeFiles/WildCard.dir/main.cpp.obj	67227c27f06c4380
+15	1649	7217924185997606	CMakeFiles/WildCard.dir/helpers.cpp.obj	52ba19a290bf17d6
+4	570	7217924903349336	CMakeFiles/WildCard.dir/Player.cpp.obj	a5bce924dbe5ee65
+4	509	7217925652514996	CMakeFiles/WildCard.dir/Player.cpp.obj	a5bce924dbe5ee65
+509	699	7217925654375697	WildCard.exe	8781d276baf216c0

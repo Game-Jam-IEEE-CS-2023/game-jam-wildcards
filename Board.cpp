@@ -23,6 +23,16 @@ bool Board::isFull() const {
     return true;
 }
 
+// Function to check if the board is empty
+bool Board::isEmpty() const {
+    for (const Card& card : boardCards) {
+        if (!card.getCardName().empty()) {
+            return false; // If at least one card is present, the board is not empty
+        }
+    }
+    return true; // If no cards are present, the board is empty
+}
+
 // Function to add a card to the board
 void Board::addCardToBoard(const Card& card) {
     for (int position = 0; position < 3; ++position) {
@@ -42,4 +52,24 @@ void Board::displayBoard() const {
         std::cout << "[" << std::setw(2) << card.getCardName() << "] ";
     }
     std::cout << "\n";
+}
+
+Card& Board::getCardAtPosition(int position) {
+    if (position >= 0 && position < 3) {
+        return boardCards[position];
+    } else {
+        // Handle invalid position
+        throw std::out_of_range("Invalid position on the board.");
+    }
+}
+
+// Remove the card at a specific position on the board
+void Board::removeCardAtPosition(int position) {
+    if (position >= 0 && position < 3) {
+        // Remove the card from the board at the specified position
+        boardCards[position] = Card("", 0, "", "", 0, 0);
+    } else {
+        // Handle invalid position
+        std::cerr << "Invalid position on the board.\n";
+    }
 }
