@@ -4,8 +4,10 @@
 #include "helpers.h"
 #include <filesystem>
 #include "Board.h"
-namespace fs = std::filesystem;
+#include <cstdlib> // Include this for rand() function
+#include <ctime>   // Include this for seeding rand()
 
+namespace fs = std::filesystem;
 using namespace std;
 
 void displayMenu() {
@@ -42,30 +44,12 @@ int main() {
     system("pause");
     cout << "En garde, man of flesh!!!" << endl;
 
-    // Generate the first hand of 5 cards for the player
-    for (int i = 0; i < 5; ++i) {
-        player1.drawCard();
-    }
+    // Seed the random number generator
+    std::srand(std::time(0));
 
-// Generate the first hand of 5 cards for Vermius (NPC)
-    for (int i = 0; i < 5; ++i) {
-        player2.drawCard();
-    }
-
-    // Create the game board
-    Board gameBoard(player1);
-    Board enemyBoard(player2);
-
-    cout << "Vermiu's board: ";
-    enemy_board.displayBoard();
-    cout << player1.getName() << "'s board: ";
-    player_board.displayBoard();
-    system("pause");  // Pause to give the user time to read the board information
-
-    // Simulate a turn
-    bool endTurn = false;
-    while (!endTurn) {
-        // Display the menu
+    // Simulate the game loop
+    while (player1.getHealth() > 0 && player2.getHealth() > 0) {
+        // Player's turn
         displayMenu();
         int choice;
         std::cout << "Enter your choice: ";
@@ -140,20 +124,70 @@ int main() {
                     cout << "Your board is not ready for an attack. Make sure you have cards on the board.\n";
                 }
 
-                endTurn = true;  // Set endTurn to true to exit the loop
                 break;
             case 5:
-                // End the turn
-                // Here, you might want to add logic to replenish the player's energy count for the next turn.
+                // End the player's turn
                 player1.replenishEnergy();
                 player2.replenishEnergy();
-                // If NPC has energy, implement the replenishEnergy function in the Player class.
-                endTurn = true;  // Set endTurn to true to exit the loop
                 break;
             default:
                 std::cout << "Invalid choice. Please choose a valid option.\n";
                 break;
         }
+
+        // Check if the player has won after their turn
+        if (player2.getHealth() <= 0) {
+            std::cout << "Congratulations! You defeated Vermius!\n";
+            break;
+        }
+
+        // Vermius's turn
+        int vermiusChoice = std::rand() % 2 + 1; // Randomly choose between 1 and 2
+        switch (vermiusChoice) {
+            case 1:
+                // Vermius places a card
+                Card vermiusCard = player2.chooseCardFromHand();
+                if (!vermiusCard.getCardName().empty()) {
+                    enemy_board.addCardToBoard(vermiusCard);
+                    std::cout << "Vermius placed a card on the board!\n";
+                    enemy_board.displayBoard();
+                }
+                break;
+            case 2:
+                // Vermius attacks
+                if (!enemy_board.isFull()) {
+                    int enemyPosition = std::rand() % 3; // Randomly choose position (0, 1, or 2)
+                    if (player_board.isEmpty()) {
+                        player1.takeDamage(player2.calculateAttackDamage());
+                    } else {
+                        int playerPosition = std::rand() % 3; // Randomly choose position (0, 1, or 2)
+                        Card& playerCard = player_board.getCardAtPosition(playerPosition);
+                        if (enemyPosition >= 0 && enemyPosition < 3) {
+                            Card& enemyCard = enemy_board.getCardAtPosition(enemyPosition);
+                            if (playerCard.getCardAtk() < enemyCard.getCardDef()) {
+                                std::cout << "Your defending card deflects Vermius's attack!\n";
+                            } else if (playerCard.getCardDef() < enemyCard.getCardAtk()) {
+                                std::cout << "Vermius's attacking card eliminates your defending card!\n";
+                                player_board.removeCardAtPosition(playerPosition);
+                            } else {
+                                std::cout << "Both cards are destroyed in battle!\n";
+                                player_board.removeCardAtPosition(playerPosition);
+                                enemy_board.removeCardAtPosition(enemyPosition);
+                            }
+                        }
+                    }
+                } else {
+                    std::cout << "Vermius's board is not ready for an attack. Make sure he has cards on the board.\n";
+                }
+                break;
+        }
+
+        // Check if Vermius has won after his turn
+        if (player1.getHealth() <= 0) {
+            std::cout << "Game over! Vermius defeated you.\n";
+            break;
+        }
     }
+
     return 0;
 }
