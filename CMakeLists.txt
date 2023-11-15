@@ -8,4 +8,5 @@ add_executable(WildCard main.cpp
         Card.h
         CardDeck.h
         Player.cpp
-        Player.h)
+        Player.h
+        helpers.cpp)

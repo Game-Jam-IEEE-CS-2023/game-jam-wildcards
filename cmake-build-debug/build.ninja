@@ -67,6 +67,12 @@ build CMakeFiles/WildCard.dir/Player.cpp.obj: CXX_COMPILER__WildCard_unscanned_D
   OBJECT_DIR = CMakeFiles\WildCard.dir
   OBJECT_FILE_DIR = CMakeFiles\WildCard.dir
 
+build CMakeFiles/WildCard.dir/helpers.cpp.obj: CXX_COMPILER__WildCard_unscanned_Debug C$:/Users/Badir/CLionProjects/WildCard/helpers.cpp || cmake_object_order_depends_target_WildCard
+  DEP_FILE = CMakeFiles\WildCard.dir\helpers.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\WildCard.dir
+  OBJECT_FILE_DIR = CMakeFiles\WildCard.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target WildCard
@@ -75,7 +81,7 @@ build CMakeFiles/WildCard.dir/Player.cpp.obj: CXX_COMPILER__WildCard_unscanned_D
 #############################################
 # Link the executable WildCard.exe
 
-build WildCard.exe: CXX_EXECUTABLE_LINKER__WildCard_Debug CMakeFiles/WildCard.dir/main.cpp.obj CMakeFiles/WildCard.dir/Card.cpp.obj CMakeFiles/WildCard.dir/Player.cpp.obj
+build WildCard.exe: CXX_EXECUTABLE_LINKER__WildCard_Debug CMakeFiles/WildCard.dir/main.cpp.obj CMakeFiles/WildCard.dir/Card.cpp.obj CMakeFiles/WildCard.dir/Player.cpp.obj CMakeFiles/WildCard.dir/helpers.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\WildCard.dir
