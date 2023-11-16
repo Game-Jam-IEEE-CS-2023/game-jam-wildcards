@@ -32,9 +32,6 @@ int main() {
     readDeck("player_deck.txt", player1);
     readDeck("vermius_deck.txt", player2);
 
-    player1.displayDeck();
-    player2.displayDeck();
-
     // Prepare for game run
     cout << "Holding . . ." << endl;
     system("pause");

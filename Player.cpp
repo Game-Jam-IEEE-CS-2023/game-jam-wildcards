@@ -41,7 +41,7 @@ Card Player::chooseCardFromHand() {
     // Display the player's hand
     std::cout << "Your hand:\n";
     for (int i = 0; i < hand.size(); ++i) {
-        std::cout << i + 1 << ". " << hand[i].getCardName() << "\n";
+        std::cout << i + 1 << ". " << hand[i].getCardName() << "Energy cost: " << "[" << hand[i].getCardCost() << "]" <<"\n";
     }
 
     // Get the player's choice
