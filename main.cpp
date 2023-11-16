@@ -28,13 +28,6 @@ int main() {
     Board player_board(player1);
     Board enemy_board(player2);
 
-    Card car_test("Proto-Squire", 3, "A digital tin-knight small but sturdy", "Block", 0, 4);
-    car_test.displayCard();
-
-    player1.displayDeck();
-    player2.displayDeck();
-
-
     // Read and populate player decks
     readDeck("player_deck.txt", player1);
     readDeck("vermius_deck.txt", player2);
