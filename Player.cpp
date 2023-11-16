@@ -59,7 +59,7 @@ Card Player::chooseCardFromHand() {
     } else {
         std::cerr << "Invalid choice. Please choose a valid card.\n";
         // Return a default-constructed card to handle the error
-        return Card("", 0, "", "", 0, 0);
+        return {"", 0, "", "", 0, 0};
     }
 }
 
