@@ -40,7 +40,6 @@ public:
         for (Card card : deck) {
             card.displayCard();
             std::cout << "\n";
-            std::cout << "\n---------------------------------\n";
         }
     }
 

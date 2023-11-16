@@ -28,9 +28,19 @@ int main() {
     Board player_board(player1);
     Board enemy_board(player2);
 
+    Card car_test("Proto-Squire", 3, "A digital tin-knight small but sturdy", "Block", 0, 4);
+    car_test.displayCard();
+
+    player1.displayDeck();
+    player2.displayDeck();
+
+
     // Read and populate player decks
     readDeck("player_deck.txt", player1);
     readDeck("vermius_deck.txt", player2);
+
+    player1.displayDeck();
+    player2.displayDeck();
 
     // Prepare for game run
     cout << "Holding . . ." << endl;
@@ -58,7 +68,7 @@ int main() {
     Board gameBoard(player1);
     Board enemyBoard(player2);
 
-    cout << "Vermiu's board: ";
+    cout << "Vermius's board: ";
     enemy_board.displayBoard();
     cout << player1.getName() << "'s board: ";
     player_board.displayBoard();
@@ -101,7 +111,7 @@ int main() {
                 // Add logic for attacking
                 // Example:
                 // player1.attack(player_board, enemy_board);
-                if (!player_board.isFull()) {
+                if (!player_board.isEmpty()) {
                     int playerPosition, enemyPosition;
 
                     // Choose the attacking card from the player's board
