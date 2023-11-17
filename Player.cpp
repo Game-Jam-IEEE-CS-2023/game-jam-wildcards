@@ -70,6 +70,5 @@ void Player::replenishEnergy() {
 
 void Player::takeDamage(int damage) {
     health = health - damage;
-    return;
 }
 
